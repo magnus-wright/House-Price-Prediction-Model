@@ -1,0 +1,17 @@
+STEP 1:
+Come up with a goal of the data set. E.g Predict House prices in the london area using postcode, no of bedrooms, sqft, etc
+
+STEP 2:
+Exploratory Data Analysis (EDA) - get info on type of data values,
+statiscal summary of dataset (mean, std, etc),
+visulisation plots (different plots to find out any relationships in the data and outliers. different distributions vs house prices),
+check and drop null values/useless columns
+
+STEP 3:
+Dataset prepation (Splitting and Scaling) - Using ML to train and test an algorithm for price prediction.
+
+STEP 4:
+Model selection and Evaluation - So use two different ML models;
+(Multiple Linear Regression and Keras Regressions which are a neural network).
+
+
