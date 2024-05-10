@@ -15,3 +15,74 @@ Model selection and Evaluation - So use two different ML models;
 (Multiple Linear Regression and Keras Regressions which are a neural network).
 
 
+QUESTION FOR HELP 
+
+Hi Alasdair,
+
+
+
+I'm a recent Physics graduate and I'm pursuing a data science career. Right now, I'm challenging myself with a ML house price prediction project to beef up my CV. 
+
+
+
+However, at the moment I'm a little stuck. Before I train my model I need to geocode a column of London 'post codes' to latitude and longitudes. I'm having issues doing this, I've tried many approaches and I think using the library Nomatim to achieve this is best.
+
+
+
+This is my code: 
+
+
+
+#Renaming new df of only post code column as post_code
+
+post_code=house_data['Postal Code']
+
+
+
+
+
+
+
+from geopy.geocoders import Nominatim
+
+import geopandas as gpd
+
+
+
+geolocator = Nominatim(user_agent="magnuswright")
+
+
+
+def my_geocoder(row):
+
+try:
+
+point = geolocator.geocode(row).point
+
+return pd.Series({'Latitude': point.latitude, 'Longitude': point.longitude})
+
+except:
+
+return None
+
+
+
+post_code[['Latitude', 'Longitude']] = post_code.apply(lambda x: my_geocoder(x))
+
+
+
+post_code.head()
+
+
+
+When I run this cell it infinitely loops and doesn't end.
+
+
+
+If you could offer any help or expertise that would be greatly appreciated.
+
+
+
+Thanks,
+
+Magnus
